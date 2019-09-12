@@ -1,4 +1,4 @@
-## Karl's Travel Guide- https://young-escarpment-82623.herokuapp.com (Site) https://github.com/Carl-Lombardi/KarlsTravelGuide (Repo)
+## Karl's Travel Guide- https://young-escarpment-82623.herokuapp.com (Site) https://github.com/cdyall/project-deux (Repo)
 Our project is a new app which is similar to Yelp, but with a focus on niche activities in cities around the world. Feed your innate human desire to find new places to explore with the power of Karl's Travel Guide. Most often, when people travel to a new city, while they want to see the well known places, most people want to hit where the locals go. If you travel with Karl, a local guide is always by your side. 
 
 ## Why Karl's Travel Guide?

@@ -56,6 +56,16 @@ var orm = {
     });
   },
 
+  usersearch: function(tableInput, user, cb) {
+    var queryString = "SELECT * FROM " + tableInput + " WHERE USERNAME='" + user + "'";
+    connection.query(queryString, function(err, result) {
+      if (err) {
+        throw err;
+      }
+      cb(result);
+    });
+  },
+
   // all: function(TABONEUSERS, TABTWOATTR, onTableOneCol, onTableTwoCol, cb) {
   //   var queryString = "SELECT * FROM " + TABONEUSERS
   //   queryString += " RIGHT JOIN " + TABTWOATTR;

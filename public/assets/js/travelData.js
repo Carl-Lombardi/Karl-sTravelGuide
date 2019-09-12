@@ -119,16 +119,17 @@ $(function () {
   });
 
   //SEARCH CALL
-  $("#search").on("click", function (event) {
+  $(".usersearch").on("click", function (event) {
     event.preventDefault();
 
-    $("#searchdump").empty();
+    $("#attrlist").empty();
 
-    var citysearch = $("#search-term").val();
+    var username = $(".username").val();
 
-    $.ajax("/data/" + citysearch, {
+    $.ajax("/data/" + username, {
       type: "GET"
     }).then(function (data) {
+      console.log(data);
       var travelsearch = data.traveller;
       var len = data.traveller.length
       for (var i = 0; i < len; i++) {
@@ -137,16 +138,15 @@ $(function () {
         $CitySearchDiv.addClass("col-sm-3");
         $("#attrlist").append($CitySearchDiv);
         var $CitySearchDiv = $("<div class='col-sm-3'>");
-        var city = $("<h2>").html(travelsearch.City);
-        var attraction = $("<h4>").html(travelsearch.Attraction);
-        var state = $("<h4>").html(travelsearch.State);
-        var country = $("<h4>").html(travelsearch.Country);
+        var city = $("<h2>").html(travelsearch[i].CITY);
+        var attraction = $("<h4>").html(travelsearch[i].ATTR_NAME);
+        var state = $("<h4>").html(travelsearch[i].STATE);
+        var country = $("<h4>").html(travelsearch[i].COUNTRY);
         $CitySearchDiv.append(city);
         $CitySearchDiv.append(attraction);
         $CitySearchDiv.append(state);
         $CitySearchDiv.append(country);
-        $("#attrlist").append(country);
-
+        $("#attrlist").append($CitySearchDiv);
       };
     });
   })

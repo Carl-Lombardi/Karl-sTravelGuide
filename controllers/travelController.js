@@ -22,8 +22,14 @@ router.get("/data", function (req, res) {
   });
 });
 
-router.get("/data/:city", function (req, res) {
-console.log(req.params)
+router.get("/data/:username", function (req, res) {
+console.log(req.params);
+
+travellerObj.usersearch(req.params.username.toUpperCase(), function (data) {
+  console.log(data.length);
+  res.json({ traveller: data });
+});
+
 });
 //   travellers.all(function(data) {
 //     console.log(data.length);

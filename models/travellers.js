@@ -9,6 +9,12 @@ var traveller = {
       cb(res);
     });
   },
+
+  usersearch: function (user,cb) {
+    orm.usersearch("USERATTR", user, function (res) {
+      cb(res);
+    });
+  },
   // The variables cols and vals are arrays.
   create: function (cols, vals, cb) {
     orm.create("USERATTR", cols, vals, function (res) {
